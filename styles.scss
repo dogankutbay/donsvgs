@@ -1,0 +1,116 @@
+$colours:
+	"blue" #2A76D3,
+	"red" #F30051,
+	"yellow" #F9CC3D,
+	"yellow2" #E8B40F,
+  "green" #00C08B,
+  "purple" #462660,
+  "crimson" #9E2C32,
+  "lightblue" #00A4EB,
+  "gray" #7E8B98,
+  "regalblue" #00487B,
+  "lagoon" #007481,
+  "rebel" #4B1607,
+;
+@mixin buttonSetColor($color){
+    background: $color;
+      span{
+              &:first-child{
+        background: lighten($color, 10%);
+      }
+      &:nth-child(2){
+         background: lighten($color, 20%);
+      }
+      &:nth-child(3){
+        background: lighten($color, 30%);
+      }
+      &:nth-child(4){
+        background: lighten($color, 40%);
+      }
+      }
+  }
+@mixin svgColorChanger($color){
+   #mainBackground30-50{fill: rgba(lighten($color, 30), .5);}
+    #linearGradient-1{
+      stop{
+        &:first-child{stop-color:rgba(lighten($color, 40), .2);} 
+        &:last-child{stop-color:lighten($color, 30);}
+      }
+    }
+    
+    #mainColor{ fill: $color; }
+    #mainColor10{ fill: lighten($color, 10);}
+    #mainColor20{ fill: lighten($color, 20);}
+    #mainColor30{ fill: lighten($color, 30);}
+    #mainColor40{ fill: lighten($color, 40);}
+}
+
+body, html{
+background-color:  #E6ECF0;
+  display: flex;
+  align-items: start;
+  padding: 25px;
+}
+.buttons{
+  cursor: pointer;
+  position: fixed;
+  top: 50px;
+  left: 25px;
+  width: 200px;
+  max-height: 100%;
+  overflow-y: auto;
+  text-align: center;
+  padding-bottom: 50px;
+  .buttonSet{
+    margin: 5px 0;
+    display: inline-block;
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    background: white;
+    text-align: center;
+    transition: all 150ms ease-out;
+    opacity: .5;
+    border:3px solid rgba(0,0,0,0);
+    &:hover{
+      opacity: 9;
+    }
+    &.active{
+      opacity: 1;
+      transform: scale(1.1);
+      border:3px solid rgba(0,0,0,.3);
+      box-shadow: 0 5px 15px rgba(0,0,0,.3);
+      border-radius: 10px;
+    }
+    span{
+      width: 20px;
+      height: 20px;
+      margin: 7px 5px 0 5px;
+      display: inline-block;
+      border-radius: 20px;
+    }
+    @each $i in $colours{
+      &.buttonSet--#{nth($i, 1)} {
+         @include buttonSetColor(nth($i, 2));
+      }
+    }
+  }
+}
+
+.svgHeader{
+  *{
+    transition: fill 250ms, stop-color 250ms;
+  }
+  max-width: 1200px;
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 200px;
+  svg{
+    margin: 10px 0;
+  }
+  @each $i in $colours{
+      &--#{nth($i, 1)} {
+         @include svgColorChanger(nth($i, 2));
+      }
+    }
+}

@@ -1,0 +1,704 @@
+body, html {
+  background-color: #E6ECF0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  padding: 25px;
+}
+
+.buttons {
+  cursor: pointer;
+  position: fixed;
+  top: 50px;
+  left: 25px;
+  width: 200px;
+  max-height: 100%;
+  overflow-y: auto;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.buttons .buttonSet {
+  margin: 5px 0;
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+  background: white;
+  text-align: center;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  opacity: .5;
+  border: 3px solid rgba(0, 0, 0, 0);
+}
+
+.buttons .buttonSet:hover {
+  opacity: 9;
+}
+
+.buttons .buttonSet.active {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.buttons .buttonSet span {
+  width: 20px;
+  height: 20px;
+  margin: 7px 5px 0 5px;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.buttons .buttonSet.buttonSet--blue {
+  background: #2A76D3;
+}
+
+.buttons .buttonSet.buttonSet--blue span:first-child {
+  background: #5391dd;
+}
+
+.buttons .buttonSet.buttonSet--blue span:nth-child(2) {
+  background: #7eace5;
+}
+
+.buttons .buttonSet.buttonSet--blue span:nth-child(3) {
+  background: #a8c8ee;
+}
+
+.buttons .buttonSet.buttonSet--blue span:nth-child(4) {
+  background: #d3e3f6;
+}
+
+.buttons .buttonSet.buttonSet--red {
+  background: #F30051;
+}
+
+.buttons .buttonSet.buttonSet--red span:first-child {
+  background: #ff276f;
+}
+
+.buttons .buttonSet.buttonSet--red span:nth-child(2) {
+  background: #ff5a91;
+}
+
+.buttons .buttonSet.buttonSet--red span:nth-child(3) {
+  background: #ff8db3;
+}
+
+.buttons .buttonSet.buttonSet--red span:nth-child(4) {
+  background: #ffc0d5;
+}
+
+.buttons .buttonSet.buttonSet--yellow {
+  background: #F9CC3D;
+}
+
+.buttons .buttonSet.buttonSet--yellow span:first-child {
+  background: #fbd96e;
+}
+
+.buttons .buttonSet.buttonSet--yellow span:nth-child(2) {
+  background: #fce6a0;
+}
+
+.buttons .buttonSet.buttonSet--yellow span:nth-child(3) {
+  background: #fef3d1;
+}
+
+.buttons .buttonSet.buttonSet--yellow span:nth-child(4) {
+  background: white;
+}
+
+.buttons .buttonSet.buttonSet--yellow2 {
+  background: #E8B40F;
+}
+
+.buttons .buttonSet.buttonSet--yellow2 span:first-child {
+  background: #f2c538;
+}
+
+.buttons .buttonSet.buttonSet--yellow2 span:nth-child(2) {
+  background: #f5d368;
+}
+
+.buttons .buttonSet.buttonSet--yellow2 span:nth-child(3) {
+  background: #f8e198;
+}
+
+.buttons .buttonSet.buttonSet--yellow2 span:nth-child(4) {
+  background: #fbefc8;
+}
+
+.buttons .buttonSet.buttonSet--green {
+  background: #00C08B;
+}
+
+.buttons .buttonSet.buttonSet--green span:first-child {
+  background: #00f3b0;
+}
+
+.buttons .buttonSet.buttonSet--green span:nth-child(2) {
+  background: #27ffc3;
+}
+
+.buttons .buttonSet.buttonSet--green span:nth-child(3) {
+  background: #5affd1;
+}
+
+.buttons .buttonSet.buttonSet--green span:nth-child(4) {
+  background: #8dffe0;
+}
+
+.buttons .buttonSet.buttonSet--purple {
+  background: #462660;
+}
+
+.buttons .buttonSet.buttonSet--purple span:first-child {
+  background: #613485;
+}
+
+.buttons .buttonSet.buttonSet--purple span:nth-child(2) {
+  background: #7b43a9;
+}
+
+.buttons .buttonSet.buttonSet--purple span:nth-child(3) {
+  background: #945fc0;
+}
+
+.buttons .buttonSet.buttonSet--purple span:nth-child(4) {
+  background: #ad84ce;
+}
+
+.buttons .buttonSet.buttonSet--crimson {
+  background: #9E2C32;
+}
+
+.buttons .buttonSet.buttonSet--crimson span:first-child {
+  background: #c6373f;
+}
+
+.buttons .buttonSet.buttonSet--crimson span:nth-child(2) {
+  background: #d25e64;
+}
+
+.buttons .buttonSet.buttonSet--crimson span:nth-child(3) {
+  background: #dd868a;
+}
+
+.buttons .buttonSet.buttonSet--crimson span:nth-child(4) {
+  background: #e8aeb1;
+}
+
+.buttons .buttonSet.buttonSet--lightblue {
+  background: #00A4EB;
+}
+
+.buttons .buttonSet.buttonSet--lightblue span:first-child {
+  background: #1fbbff;
+}
+
+.buttons .buttonSet.buttonSet--lightblue span:nth-child(2) {
+  background: #52cbff;
+}
+
+.buttons .buttonSet.buttonSet--lightblue span:nth-child(3) {
+  background: #85daff;
+}
+
+.buttons .buttonSet.buttonSet--lightblue span:nth-child(4) {
+  background: #b8eaff;
+}
+
+.buttons .buttonSet.buttonSet--gray {
+  background: #7E8B98;
+}
+
+.buttons .buttonSet.buttonSet--gray span:first-child {
+  background: #9aa5af;
+}
+
+.buttons .buttonSet.buttonSet--gray span:nth-child(2) {
+  background: #b7bec5;
+}
+
+.buttons .buttonSet.buttonSet--gray span:nth-child(3) {
+  background: #d3d8dc;
+}
+
+.buttons .buttonSet.buttonSet--gray span:nth-child(4) {
+  background: #eff1f3;
+}
+
+.buttons .buttonSet.buttonSet--regalblue {
+  background: #00487B;
+}
+
+.buttons .buttonSet.buttonSet--regalblue span:first-child {
+  background: #0066ae;
+}
+
+.buttons .buttonSet.buttonSet--regalblue span:nth-child(2) {
+  background: #0084e1;
+}
+
+.buttons .buttonSet.buttonSet--regalblue span:nth-child(3) {
+  background: #159eff;
+}
+
+.buttons .buttonSet.buttonSet--regalblue span:nth-child(4) {
+  background: #48b3ff;
+}
+
+.buttons .buttonSet.buttonSet--lagoon {
+  background: #007481;
+}
+
+.buttons .buttonSet.buttonSet--lagoon span:first-child {
+  background: #00a2b4;
+}
+
+.buttons .buttonSet.buttonSet--lagoon span:nth-child(2) {
+  background: #00d0e7;
+}
+
+.buttons .buttonSet.buttonSet--lagoon span:nth-child(3) {
+  background: #1be8ff;
+}
+
+.buttons .buttonSet.buttonSet--lagoon span:nth-child(4) {
+  background: #4eedff;
+}
+
+.buttons .buttonSet.buttonSet--rebel {
+  background: #4B1607;
+}
+
+.buttons .buttonSet.buttonSet--rebel span:first-child {
+  background: #7a240b;
+}
+
+.buttons .buttonSet.buttonSet--rebel span:nth-child(2) {
+  background: #a83110;
+}
+
+.buttons .buttonSet.buttonSet--rebel span:nth-child(3) {
+  background: #d73f14;
+}
+
+.buttons .buttonSet.buttonSet--rebel span:nth-child(4) {
+  background: #ec5b32;
+}
+
+.svgHeader {
+  max-width: 1200px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 200px;
+}
+
+.svgHeader * {
+  -webkit-transition: fill 250ms, stop-color 250ms;
+  transition: fill 250ms, stop-color 250ms;
+}
+
+.svgHeader svg {
+  margin: 10px 0;
+}
+
+.svgHeader--blue #mainBackground30-50 {
+  fill: rgba(168, 200, 238, 0.5);
+}
+
+.svgHeader--blue #linearGradient-1 stop:first-child {
+  stop-color: rgba(211, 227, 246, 0.2);
+}
+
+.svgHeader--blue #linearGradient-1 stop:last-child {
+  stop-color: #a8c8ee;
+}
+
+.svgHeader--blue #mainColor {
+  fill: #2A76D3;
+}
+
+.svgHeader--blue #mainColor10 {
+  fill: #5391dd;
+}
+
+.svgHeader--blue #mainColor20 {
+  fill: #7eace5;
+}
+
+.svgHeader--blue #mainColor30 {
+  fill: #a8c8ee;
+}
+
+.svgHeader--blue #mainColor40 {
+  fill: #d3e3f6;
+}
+
+.svgHeader--red #mainBackground30-50 {
+  fill: rgba(255, 141, 179, 0.5);
+}
+
+.svgHeader--red #linearGradient-1 stop:first-child {
+  stop-color: rgba(255, 192, 213, 0.2);
+}
+
+.svgHeader--red #linearGradient-1 stop:last-child {
+  stop-color: #ff8db3;
+}
+
+.svgHeader--red #mainColor {
+  fill: #F30051;
+}
+
+.svgHeader--red #mainColor10 {
+  fill: #ff276f;
+}
+
+.svgHeader--red #mainColor20 {
+  fill: #ff5a91;
+}
+
+.svgHeader--red #mainColor30 {
+  fill: #ff8db3;
+}
+
+.svgHeader--red #mainColor40 {
+  fill: #ffc0d5;
+}
+
+.svgHeader--yellow #mainBackground30-50 {
+  fill: rgba(254, 243, 209, 0.5);
+}
+
+.svgHeader--yellow #linearGradient-1 stop:first-child {
+  stop-color: rgba(255, 255, 255, 0.2);
+}
+
+.svgHeader--yellow #linearGradient-1 stop:last-child {
+  stop-color: #fef3d1;
+}
+
+.svgHeader--yellow #mainColor {
+  fill: #F9CC3D;
+}
+
+.svgHeader--yellow #mainColor10 {
+  fill: #fbd96e;
+}
+
+.svgHeader--yellow #mainColor20 {
+  fill: #fce6a0;
+}
+
+.svgHeader--yellow #mainColor30 {
+  fill: #fef3d1;
+}
+
+.svgHeader--yellow #mainColor40 {
+  fill: white;
+}
+
+.svgHeader--yellow2 #mainBackground30-50 {
+  fill: rgba(248, 225, 152, 0.5);
+}
+
+.svgHeader--yellow2 #linearGradient-1 stop:first-child {
+  stop-color: rgba(251, 239, 200, 0.2);
+}
+
+.svgHeader--yellow2 #linearGradient-1 stop:last-child {
+  stop-color: #f8e198;
+}
+
+.svgHeader--yellow2 #mainColor {
+  fill: #E8B40F;
+}
+
+.svgHeader--yellow2 #mainColor10 {
+  fill: #f2c538;
+}
+
+.svgHeader--yellow2 #mainColor20 {
+  fill: #f5d368;
+}
+
+.svgHeader--yellow2 #mainColor30 {
+  fill: #f8e198;
+}
+
+.svgHeader--yellow2 #mainColor40 {
+  fill: #fbefc8;
+}
+
+.svgHeader--green #mainBackground30-50 {
+  fill: rgba(90, 255, 209, 0.5);
+}
+
+.svgHeader--green #linearGradient-1 stop:first-child {
+  stop-color: rgba(141, 255, 224, 0.2);
+}
+
+.svgHeader--green #linearGradient-1 stop:last-child {
+  stop-color: #5affd1;
+}
+
+.svgHeader--green #mainColor {
+  fill: #00C08B;
+}
+
+.svgHeader--green #mainColor10 {
+  fill: #00f3b0;
+}
+
+.svgHeader--green #mainColor20 {
+  fill: #27ffc3;
+}
+
+.svgHeader--green #mainColor30 {
+  fill: #5affd1;
+}
+
+.svgHeader--green #mainColor40 {
+  fill: #8dffe0;
+}
+
+.svgHeader--purple #mainBackground30-50 {
+  fill: rgba(148, 95, 192, 0.5);
+}
+
+.svgHeader--purple #linearGradient-1 stop:first-child {
+  stop-color: rgba(173, 132, 206, 0.2);
+}
+
+.svgHeader--purple #linearGradient-1 stop:last-child {
+  stop-color: #945fc0;
+}
+
+.svgHeader--purple #mainColor {
+  fill: #462660;
+}
+
+.svgHeader--purple #mainColor10 {
+  fill: #613485;
+}
+
+.svgHeader--purple #mainColor20 {
+  fill: #7b43a9;
+}
+
+.svgHeader--purple #mainColor30 {
+  fill: #945fc0;
+}
+
+.svgHeader--purple #mainColor40 {
+  fill: #ad84ce;
+}
+
+.svgHeader--crimson #mainBackground30-50 {
+  fill: rgba(221, 134, 138, 0.5);
+}
+
+.svgHeader--crimson #linearGradient-1 stop:first-child {
+  stop-color: rgba(232, 174, 177, 0.2);
+}
+
+.svgHeader--crimson #linearGradient-1 stop:last-child {
+  stop-color: #dd868a;
+}
+
+.svgHeader--crimson #mainColor {
+  fill: #9E2C32;
+}
+
+.svgHeader--crimson #mainColor10 {
+  fill: #c6373f;
+}
+
+.svgHeader--crimson #mainColor20 {
+  fill: #d25e64;
+}
+
+.svgHeader--crimson #mainColor30 {
+  fill: #dd868a;
+}
+
+.svgHeader--crimson #mainColor40 {
+  fill: #e8aeb1;
+}
+
+.svgHeader--lightblue #mainBackground30-50 {
+  fill: rgba(133, 218, 255, 0.5);
+}
+
+.svgHeader--lightblue #linearGradient-1 stop:first-child {
+  stop-color: rgba(184, 234, 255, 0.2);
+}
+
+.svgHeader--lightblue #linearGradient-1 stop:last-child {
+  stop-color: #85daff;
+}
+
+.svgHeader--lightblue #mainColor {
+  fill: #00A4EB;
+}
+
+.svgHeader--lightblue #mainColor10 {
+  fill: #1fbbff;
+}
+
+.svgHeader--lightblue #mainColor20 {
+  fill: #52cbff;
+}
+
+.svgHeader--lightblue #mainColor30 {
+  fill: #85daff;
+}
+
+.svgHeader--lightblue #mainColor40 {
+  fill: #b8eaff;
+}
+
+.svgHeader--gray #mainBackground30-50 {
+  fill: rgba(211, 216, 220, 0.5);
+}
+
+.svgHeader--gray #linearGradient-1 stop:first-child {
+  stop-color: rgba(239, 241, 243, 0.2);
+}
+
+.svgHeader--gray #linearGradient-1 stop:last-child {
+  stop-color: #d3d8dc;
+}
+
+.svgHeader--gray #mainColor {
+  fill: #7E8B98;
+}
+
+.svgHeader--gray #mainColor10 {
+  fill: #9aa5af;
+}
+
+.svgHeader--gray #mainColor20 {
+  fill: #b7bec5;
+}
+
+.svgHeader--gray #mainColor30 {
+  fill: #d3d8dc;
+}
+
+.svgHeader--gray #mainColor40 {
+  fill: #eff1f3;
+}
+
+.svgHeader--regalblue #mainBackground30-50 {
+  fill: rgba(21, 158, 255, 0.5);
+}
+
+.svgHeader--regalblue #linearGradient-1 stop:first-child {
+  stop-color: rgba(72, 179, 255, 0.2);
+}
+
+.svgHeader--regalblue #linearGradient-1 stop:last-child {
+  stop-color: #159eff;
+}
+
+.svgHeader--regalblue #mainColor {
+  fill: #00487B;
+}
+
+.svgHeader--regalblue #mainColor10 {
+  fill: #0066ae;
+}
+
+.svgHeader--regalblue #mainColor20 {
+  fill: #0084e1;
+}
+
+.svgHeader--regalblue #mainColor30 {
+  fill: #159eff;
+}
+
+.svgHeader--regalblue #mainColor40 {
+  fill: #48b3ff;
+}
+
+.svgHeader--lagoon #mainBackground30-50 {
+  fill: rgba(27, 232, 255, 0.5);
+}
+
+.svgHeader--lagoon #linearGradient-1 stop:first-child {
+  stop-color: rgba(78, 237, 255, 0.2);
+}
+
+.svgHeader--lagoon #linearGradient-1 stop:last-child {
+  stop-color: #1be8ff;
+}
+
+.svgHeader--lagoon #mainColor {
+  fill: #007481;
+}
+
+.svgHeader--lagoon #mainColor10 {
+  fill: #00a2b4;
+}
+
+.svgHeader--lagoon #mainColor20 {
+  fill: #00d0e7;
+}
+
+.svgHeader--lagoon #mainColor30 {
+  fill: #1be8ff;
+}
+
+.svgHeader--lagoon #mainColor40 {
+  fill: #4eedff;
+}
+
+.svgHeader--rebel #mainBackground30-50 {
+  fill: rgba(215, 63, 20, 0.5);
+}
+
+.svgHeader--rebel #linearGradient-1 stop:first-child {
+  stop-color: rgba(236, 91, 50, 0.2);
+}
+
+.svgHeader--rebel #linearGradient-1 stop:last-child {
+  stop-color: #d73f14;
+}
+
+.svgHeader--rebel #mainColor {
+  fill: #4B1607;
+}
+
+.svgHeader--rebel #mainColor10 {
+  fill: #7a240b;
+}
+
+.svgHeader--rebel #mainColor20 {
+  fill: #a83110;
+}
+
+.svgHeader--rebel #mainColor30 {
+  fill: #d73f14;
+}
+
+.svgHeader--rebel #mainColor40 {
+  fill: #ec5b32;
+}
+/*# sourceMappingURL=styles.css.map */
